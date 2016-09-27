@@ -1,0 +1,52 @@
+﻿@model IEnumerable<alytaloV2.Models.Sauna>
+
+@{
+    ViewBag.Title = "Saunat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Saunat</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Kuvaus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lampotila)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SaunaPaalla)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Talo.Kuvaus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kuvaus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lampotila)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SaunaPaalla)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Talo.Kuvaus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SaunaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SaunaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SaunaId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model alytaloV2.Models.Sauna
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sauna</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kuvaus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kuvaus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lampotila)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lampotila)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaunaPaalla)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaunaPaalla)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Talo.Kuvaus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Talo.Kuvaus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SaunaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

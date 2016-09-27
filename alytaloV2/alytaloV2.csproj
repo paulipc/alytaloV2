@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -170,24 +172,69 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SaunasController.cs" />
+    <Compile Include="Controllers\TaloesController.cs" />
+    <Compile Include="Controllers\ValoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\alytalo.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>alytalo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\alytalo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>alytalo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\alytalo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>alytalo.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Sauna.cs">
+      <DependentUpon>alytalo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Talo.cs">
+      <DependentUpon>alytalo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Valo.cs">
+      <DependentUpon>alytalo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="dbScript\database.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\alytalo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>alytalo.edmx</DependentUpon>
+      <LastGenOutput>alytalo.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\alytalo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>alytalo.edmx</DependentUpon>
+      <LastGenOutput>alytalo.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\alytalo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>alytalo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\alytalo.edmx.diagram">
+      <DependentUpon>alytalo.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -234,6 +281,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Taloes\Create.cshtml" />
+    <Content Include="Views\Taloes\Delete.cshtml" />
+    <Content Include="Views\Taloes\Details.cshtml" />
+    <Content Include="Views\Taloes\Edit.cshtml" />
+    <Content Include="Views\Taloes\Index.cshtml" />
+    <Content Include="Views\Saunas\Create.cshtml" />
+    <Content Include="Views\Saunas\Delete.cshtml" />
+    <Content Include="Views\Saunas\Details.cshtml" />
+    <Content Include="Views\Saunas\Edit.cshtml" />
+    <Content Include="Views\Saunas\Index.cshtml" />
+    <Content Include="Views\Valoes\Create.cshtml" />
+    <Content Include="Views\Valoes\Delete.cshtml" />
+    <Content Include="Views\Valoes\Details.cshtml" />
+    <Content Include="Views\Valoes\Edit.cshtml" />
+    <Content Include="Views\Valoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -245,6 +307,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

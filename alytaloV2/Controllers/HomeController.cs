@@ -10,21 +10,21 @@ namespace alytaloV2.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return base.View();
         }
 
-        public ActionResult About()
+         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return base.View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return base.View();
         }
     }
 }
